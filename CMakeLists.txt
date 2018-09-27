@@ -11,7 +11,11 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(PLUGIN_DIR ${CMAKE_BINARY_DIR}/plugins)
 
+option(BUILD_SHARED_LIBS "Build all libraries as shared libraries instead of static" OFF)
+
 find_package(Qt5 REQUIRED COMPONENTS Quick Core Qml)
+
+add_subdirectory(3rdparty/)
 
 add_subdirectory(qml)
 add_subdirectory(plugins)
