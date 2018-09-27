@@ -17,10 +17,7 @@ add_library(
     myplugin.cpp
     myquickitem.cpp
 
-    # It's not important to include 'qmldir' or 'plugin.qmltypes' here,
-    # but it will make IDEs (such as Qt Creator) to include them in project tree
     qmldir
-    plugin.qmltypes
 
     ${PLUGIN_RESOURCES}     # Plugin resources file
 )
