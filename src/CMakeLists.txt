@@ -22,4 +22,10 @@ target_link_libraries(${PROJECT_NAME}
         Qt5::Core
         Qt5::Quick
         Qt5::Qml
+
 )
+
+add_executable(libxml2_test_tree2
+    libxml2_test_tree2.c
+)
+target_link_libraries(libxml2_test_tree2 PRIVATE ThirdParty::xml2)

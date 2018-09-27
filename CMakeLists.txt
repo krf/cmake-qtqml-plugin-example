@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.9)
-project(app VERSION 1.0 LANGUAGES CXX)
+project(app VERSION 1.0 LANGUAGES C CXX)
 
 # Tell CMake to call moc automaticly
 set(CMAKE_AUTOMOC ON)
