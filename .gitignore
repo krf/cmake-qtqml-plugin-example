@@ -25,7 +25,6 @@ build/*
 .DS_Store
 *.qmake.cache
 *.qmake.stash
-Makefile*
 moc_*.cpp
 qrc_*.cpp
 *.creator.user*
