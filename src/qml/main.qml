@@ -16,7 +16,7 @@ ApplicationWindow {
     MyPlugin.MyQuickItem {
         id: pluginItem
         color: "green"
-        width: 100
+        width: 200
         height: 50
         anchors.centerIn: parent
     }

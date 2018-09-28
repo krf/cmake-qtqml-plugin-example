@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugin">
+        <file>MyQml.qml</file>
+    </qresource>
+</RCC>

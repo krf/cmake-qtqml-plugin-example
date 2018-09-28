@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
+
+    qDebug() << app.applicationDirPath();
     const QString qmlPluginsDir = app.applicationDirPath() + "/../qml";
     // Add import search path
     qDebug() << "Adding import path for QML plugins:" << qmlPluginsDir;

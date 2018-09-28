@@ -4,13 +4,7 @@
 # If you're goind to create reusable plugin make sure to build it as
 # separate project with proper install commands and CMake.config file.
 
-# 'myplugin' resource file. All files have 'plugin/' prefix
-qt5_add_resources(PLUGIN_RESOURCES plugin.qrc)
-
-add_library(
-    myplugin
-    MODULE
-
+add_library(myplugin MODULE
     myplugin.h
     myquickitem.h
 
@@ -19,29 +13,15 @@ add_library(
 
     qmldir
 
-    ${PLUGIN_RESOURCES}     # Plugin resources file
+    plugin_common.qrc
 )
+if (PLATFORM STREQUAL "win")
+    target_sources(myplugin PRIVATE win/plugin.qrc)
+else()
+    target_sources(myplugin PRIVATE ios/plugin.qrc)
+endif()
 
-set(CMAKE_AUTOMOC ON)
-find_package(Qt5 REQUIRED COMPONENTS Quick Core Qml)
-
-target_compile_features(
-    myplugin
-    PRIVATE
-        cxx_auto_type
-        cxx_generic_lambdas
-)
-
-target_compile_options(
-    myplugin
-    PRIVATE
-        -Wall
-        -Wextra
-        -Wpedantic
-)
-
-target_link_libraries(
-    myplugin
+target_link_libraries(myplugin
     PRIVATE
         Qt5::Core
         Qt5::Quick
